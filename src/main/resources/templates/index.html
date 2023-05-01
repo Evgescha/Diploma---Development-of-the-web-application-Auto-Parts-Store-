@@ -176,8 +176,8 @@
             <div class="col-12">
                 <div class="product-wrapper columns-5">
                     <!-- Start Product Item -->
-                    <div class="col">
-                        <div class="product-item" th:each="entity:${list}">
+                    <div class="col"  th:each="entity:${list}">
+                        <div class="product-item">
                             <div class="product-item__thumb">
                                 <a th:href="'/product/'+${entity.id}">
                                     <img class="thumb-primary" th:src="${entity.image}" alt="Product" />
