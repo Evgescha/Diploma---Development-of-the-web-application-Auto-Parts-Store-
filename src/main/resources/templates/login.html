@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{/commons/head :: head}"></head>
+<body class="cnt-home">
+
+<div th:replace="~{/commons/header :: header}"></div>
+
+<!--== Start Page Header Area ==-->
+<div class="page-header-wrap bg-img" data-bg="/img/bg/page-header-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="page-header-content">
+                    <div class="page-header-content-inner">
+                        <h1>Login page</h1>
+
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li class="current"><a href="#">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Page Header Area ==-->
+
+
+<section class="body-content outer-top-bd mt-5">
+    <div class="container">
+        <div class="sign-in-page inner-bottom-sm">
+            <div class="row">
+                <h3 th:if="${success != null}" th:text="${success}" class="text-center"></h3>
+
+                <h3 th:if="${#request.getParameter('error') != null and #request.getParameter('error') == 'true'}" class="text-center"></h3>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 sign-in">
+                    <h4 class="">sign in</h4>
+                    <p class="">Hello, Welcome to your account.</p>
+                    <form class="register-form outer-top-xs" role="form" method="post" action="/login">
+                        <div class="form-group">
+                            <label class="info-title" for="exampleInputEmail1">Username <span>*</span>
+                            </label>
+                            <input type="text" class="form-control unicase-form-control text-input" id="exampleInputEmail1" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="exampleInputPassword1">Password <span>*</span>
+                            </label>
+                            <input type="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1" name="password" required>
+                        </div>
+                        <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Login</button>
+                    </form>
+                </div>
+                <div class="col-md-6 col-sm-6 create-new-account">
+                    <h4 class="checkout-subtitle">create a new account</h4>
+                    <p class="text title-tag-line">Create your own Unicase account.</p>
+                    <form class="register-form outer-top-xs" role="form" action="/registration" method="post">
+                        <div class="form-group">
+                            <label class="info-title" for="e1">username <span>*</span>
+                            </label>
+                            <input type="text" class="form-control unicase-form-control text-input" id="e1" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="e2">password<span>*</span>
+                            </label>
+                            <input type="password" class="form-control unicase-form-control text-input" id="e2" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="e3">firstname <span>*</span>
+                            </label>
+                            <input type="text" class="form-control unicase-form-control text-input" id="e3" name="firstname" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="e4">lastname <span>*</span>
+                            </label>
+                            <input type="text" class="form-control unicase-form-control text-input" id="e4" name="lastname" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="e5">Email Address <span>*</span>
+                            </label>
+                            <input type="email" class="form-control unicase-form-control text-input" id="e5" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="e6">image <span>*</span>
+                            </label>
+                            <input type="text" class="form-control unicase-form-control text-input" id="e6" name="image" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="exampleInputEmail2">address <span>*</span>
+                            </label>
+                            <input type="text" class="form-control unicase-form-control text-input" id="exampleInputEmail2" name="address" required>
+                        </div>
+                        <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer th:replace="~{/commons/footer :: footer}"></footer>
+
+<div th:replace="~{/commons/script :: script}"></div>
+
+</body>
+</html>

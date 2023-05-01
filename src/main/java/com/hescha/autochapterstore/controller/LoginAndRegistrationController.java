@@ -15,7 +15,7 @@ public class LoginAndRegistrationController {
 
     @GetMapping("/login")
     public String login() {
-        return "sign-in";
+        return "login";
     }
 
     @PostMapping("/registration")
@@ -25,6 +25,6 @@ public class LoginAndRegistrationController {
                 ? "Success"
                 : "Registration failed. Try again later";
         model.addAttribute("success", response);
-        return "sign-in";
+        return "login";
     }
 }

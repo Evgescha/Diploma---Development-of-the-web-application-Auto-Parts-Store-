@@ -1,6 +1,7 @@
 package com.hescha.autochapterstore.service;
 
 import com.hescha.autochapterstore.model.Order;
+import com.hescha.autochapterstore.model.Role;
 import com.hescha.autochapterstore.model.User;
 import com.hescha.autochapterstore.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -70,7 +71,8 @@ public class UserService extends CrudService<User> implements org.springframewor
 
     public boolean registerNew(User entity) {
 
-        entity.getRoles().add(roleService.read(1));
+        Role read = roleService.read(1);
+        entity.getRoles().add(read);
         log.info("registerNew {}", entity);
         if (repository.findByUsername(entity.getUsername()) != null) {
             return false;

@@ -1,8 +1,10 @@
 package com.hescha.autochapterstore.model;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
+@Getter
 public enum Category{
     OIL ("Масло"),
     ACCUMULATOR ("Аккумулятор"),
@@ -16,8 +18,4 @@ public enum Category{
         return Category.valueOf(str);
     }
 
-    @Override
-    public String toString() {
-        return name;
-    }
 }

@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 @Controller
 @RequiredArgsConstructor
@@ -35,17 +38,24 @@ public class ProductController {
     @GetMapping
     public String readAll(Model model) {
         model.addAttribute("list", service.readAllNotDeleted());
+        model.addAttribute("categories", Category.values());
         return THYMELEAF_TEMPLATE_ALL_ITEMS_PAGE;
     }
 
     @GetMapping("/filter/{category}")
     public String filter(Model model, @PathVariable String category) {
-        model.addAttribute("list", service.findByCategory(Category.valueOf(category)));
+        model.addAttribute("categories", Category.values());
+        List<Product> byCategory = service.findByCategory(Category.valueOf(category));
+        byCategory = byCategory.stream()
+                .filter(product -> product.getDeleted() == null || !product.getDeleted())
+                .collect(Collectors.toList());
+        model.addAttribute("list", byCategory);
         return THYMELEAF_TEMPLATE_ALL_ITEMS_PAGE;
     }
 
     @GetMapping("/search")
     public String search(Model model, @RequestParam String searchPhrase) {
+        model.addAttribute("categories", Category.values());
         model.addAttribute("list", service.findByNameContainsOrDescriptionContains(searchPhrase));
         return THYMELEAF_TEMPLATE_ALL_ITEMS_PAGE;
     }

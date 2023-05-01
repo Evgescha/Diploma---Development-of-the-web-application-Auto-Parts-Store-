@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{/commons/head :: head}"></head>
+<body class="cnt-home">
+<div th:replace="~{/commons/header :: header}"></div>
+
+<!--== Start Page Header Area ==-->
+<div class="page-header-wrap bg-img" data-bg="/img/bg/page-header-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="page-header-content">
+                    <div class="page-header-content-inner">
+                        <h1>Edit user</h1>
+
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li class="current"><a href="#">User</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Page Header Area ==-->
+<div class="body-content outer-top-bd mt-5">
+    <div class="container">
+        <div class="sign-in-page inner-bottom-sm">
+            <div class="row">
+                <h3 th:if="${message != null}" th:text="${message}" class="text-center"></h3>
+                <div class="col-md-12">
+                    <h4 class="">Edit Profile</h4>
+                    <form th:action="@{/user}" th:object="${entity}" method="post" class="register-form outer-top-xs">
+                        <div class="form-group">
+                            <label class="info-title" for="username">Username <span>*</span></label>
+                            <input type="text" th:field="*{username}" id="username" class="form-control unicase-form-control text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="password">Password <span>*</span></label>
+                            <input type="text" id="password" class="form-control unicase-form-control text-input" required name="password">
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="firstname">First Name <span>*</span></label>
+                            <input type="text" th:field="*{firstname}" id="firstname" class="form-control unicase-form-control text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="lastname">Last Name <span>*</span></label>
+                            <input type="text" th:field="*{lastname}" id="lastname" class="form-control unicase-form-control text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="email">Email <span>*</span></label>
+                            <input type="text" th:field="*{email}" id="email" class="form-control unicase-form-control text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="image">Image URL <span>*</span></label>
+                            <input type="text" th:field="*{image}" id="image" class="form-control unicase-form-control text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="address">Address <span>*</span></label>
+                            <input type="text" th:field="*{address}" id="address" class="form-control unicase-form-control text-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="info-title" for="roles">Roles <span>*</span></label>
+                            <select multiple="multiple" th:field="*{roles}" id="roles" class="form-control unicase-form-control text-input">
+                                <option th:each="roles_item : ${allRoles}" th:value="${roles_item.id}" th:text="${roles_item}"></option>
+                            </select>
+                        </div>
+                        <input type="hidden" th:field="*{id}" id="id">
+                        <div class="form-group">
+                            <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Save</button>
+                            <a th:href="@{/user}" class="btn btn-default">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="~{/commons/footer :: footer}"></footer>
+
+<div th:replace="~{/commons/script :: script}"></div>
+
+</body>
+</html>

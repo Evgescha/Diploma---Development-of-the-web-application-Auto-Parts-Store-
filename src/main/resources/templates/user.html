@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{/commons/head :: head}"></head>
+</head>
+
+<body>
+
+<header th:replace="~{/commons/header :: header}"></header>
+
+
+<!--== Start Page Header Area ==-->
+<div class="page-header-wrap bg-img" data-bg="/img/bg/page-header-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="page-header-content">
+                    <div class="page-header-content-inner">
+                        <h1>Users</h1>
+
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li class="current"><a href="#">User</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Page Header Area ==-->
+
+
+<div class="container-xxl py-6 mt-5">
+    <div class="container">
+        <h1>List of User</h1>
+        <h3 th:if="${message != null}" th:text="${message}">Message</h3>
+        <a th:href="@{/user/edit}">Create new User</a>
+        <table style="width: 100%">
+            <thead>
+            <tr>
+                <th>username</th>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>email</th>
+                <th>image</th>
+                <th>address</th>
+                <th>roles</th>
+
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="entity : ${list}">
+                <td th:text=${entity.username}></td>
+                <td th:text=${entity.firstname}></td>
+                <td th:text=${entity.lastname}></td>
+                <td th:text=${entity.email}></td>
+                <td> <img th:src="${entity.image}" style="width: 100px; height: 100px"></td>
+                <td th:text=${entity.address}></td>
+                <td>
+                    <ul>
+                        <li th:each="roles_item : ${entity.roles}" th:text="${roles_item}"></li>
+                    </ul>
+                </td>
+                <td>
+                    <a th:href="@{/user/{id}(id=${entity.id})}">See detail</a>
+                    <a th:href="@{/user/edit/{id}(id=${entity.id})}">Edit</a>
+                    <form th:if="${entity.id!=null}" method="get"
+                          th:action="'/user/'
+                  +${entity.id}+'/delete'">
+                        <input type="submit" value="Delete" onclick="return confirm('Are you sure?')">
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer th:replace="~{/commons/footer :: footer}"></footer>
+
+<div th:replace="~{/commons/script :: script}"></div>
+
+
+</body>
+</html>

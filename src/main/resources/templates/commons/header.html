@@ -20,19 +20,23 @@
                     <ul class="main-menu nav">
                         <li><a href="/">Home</a></li>
                         <li><a href="/product">Shop</a></li>
-                        <li><a href="/order">Order</a></li>
+                        <li><a href="/order" th:if="${#request.userPrincipal != null}">Order</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <li><a href="/user/profile">Profile</a></li>
+                        <li><a href="/user/profile" th:if="${#request.userPrincipal != null and !#request.isUserInRole('ADMIN') }">Profile</a></li>
+                        <li><a href="/user" th:if="${#request.isUserInRole('ADMIN') }">Users</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="col-sm-8 col-lg-3">
                 <div class="site-action d-flex justify-content-center justify-content-sm-end align-items-center">
-                    <ul class="login-reg-nav nav">
+                    <ul class="login-reg-nav nav" th:if="${#request.userPrincipal == null}">
                         <li><a href="/login">Login</a></li>
                         <li><a href="/login">Register</a></li>
+                    </ul>
+                    <ul class="login-reg-nav nav" th:if="${#request.userPrincipal != null}">
+                        <li><a href="/logout">LogOut</a></li>
                     </ul>
 
                     <div class="responsive-menu d-lg-none">

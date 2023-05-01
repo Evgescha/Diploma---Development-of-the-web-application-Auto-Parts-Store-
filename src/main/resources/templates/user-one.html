@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{/commons/head :: head}"></head>
+<body class="cnt-home">
+<div th:replace="~{/commons/header :: header}"></div>
+
+<!--== Start Page Header Area ==-->
+<div class="page-header-wrap bg-img" data-bg="/img/bg/page-header-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="page-header-content">
+                    <div class="page-header-content-inner">
+                        <h1>User</h1>
+
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li class="current"><a href="#">Profile</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Page Header Area ==-->
+
+<div class="container-xxl py-6 mt-5">
+    <div class="container">
+        <div class="section-header text-center mx-auto mb-5">
+            <h1 class="display-5 mb-3">User Profile</h1>
+            <h3 th:if="${message != null}" th:text="${message}" class="text-center"></h3>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h3>Personal Information</h3>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Username</th>
+                        <td th:text="${user.username}"></td>
+                    </tr>
+                    <tr>
+                        <th>First Name</th>
+                        <td th:text="${user.firstname}"></td>
+                    </tr>
+                    <tr>
+                        <th>Last Name</th>
+                        <td th:text="${user.lastname}"></td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td th:text="${user.email}"></td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td th:text="${user.address}"></td>
+                    </tr>
+                </table>
+                <a class="btn btn-primary" th:href="@{/user/edit/{id}(id=${user.id})}">Edit Profile</a>
+            </div>
+            <div class="col-md-4">
+                <img th:src="${user.image}" alt="Profile Image" class="img-fluid" style="width: 100%">
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3>Orders</h3>
+                <ul class="nav nav-pills mb-3" id="ordersTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="created-tab" data-bs-toggle="pill" href="#CREATED" role="tab"
+                           aria-controls="created" aria-selected="true">Created</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="inProgress-tab" data-bs-toggle="pill" href="#IN_PROGRES" role="tab"
+                           aria-controls="inProgress" aria-selected="false">In Progress</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="done-tab" data-bs-toggle="pill" href="#DONE" role="tab"
+                           aria-controls="done" aria-selected="false">Done</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="closed-tab" data-bs-toggle="pill" href="#CLOSED" role="tab"
+                           aria-controls="closed" aria-selected="false">Closed</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="ordersTabContent">
+                    <div th:each="status : ${T(com.hescha.autochapterstore.model.OrderStatus).values()}"
+                         th:id="${status}"
+                         th:classappend="${status == T(com.hescha.autochapterstore.model.OrderStatus).CREATED} ? 'active '"
+                         class="tab-pane" role="tabpanel" aria-labelledby="${status}-tab">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Created</th>
+                                <th>Status</th>
+                                <th>Order Items</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="order : ${user.orders}" th:if="${order.status == status}">
+                                <td th:text="${order.id}"></td>
+                                <td th:text="${order.created}"></td>
+                                <td th:text="${order.status}"></td>
+                                <td>
+                                    <ul>
+                                        <li th:each="item : ${order.orderitems}" th:if="${order.status == 'CREATED'}">
+                                            <span th:text="${item.product.name}"></span> x <span
+                                                th:text="${item.count}"></span>
+                                            <a class="btn btn-danger btn-sm"
+                                               th:href="@{/order/{id}/deleteOrderItem(id=${item.id})}">Delete</a>
+                                        </li>
+                                        <li th:each="item : ${order.orderitems}" th:if="${order.status != 'CREATED'}">
+                                            <span th:text="${item.product.name}"></span> x <span
+                                                th:text="${item.count}"></span>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <a th:if="${status == T(com.hescha.autochapterstore.model.OrderStatus).CREATED}"
+                                       class="btn btn-danger" th:href="@{/order/{id}/delete(id=${order.id})}">Delete
+                                        Order</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="~{/commons/footer :: footer}"></footer>
+
+<div th:replace="~{/commons/script :: script}"></div>
+
+</body>
+
+</html>
+
