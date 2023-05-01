@@ -2,18 +2,24 @@ package com.hescha.autochapterstore.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/")
 public class IndexController {
-
-    @GetMapping(path = {"/index", "/"})
-    public String index() {
+    @GetMapping
+    public String home() {
         return "index";
     }
 
     @GetMapping("/about")
-    public String about() {
+    public String page404() {
         return "about";
+    }
+
+    @GetMapping("/contact")
+    public String contact() {
+        return "contact";
     }
 
     @GetMapping("/cart")
@@ -26,18 +32,9 @@ public class IndexController {
         return "checkout";
     }
 
-    @GetMapping("/contact")
-    public String contact() {
-        return "contact";
-    }
-
     @GetMapping("/shop")
     public String shop() {
-        return "shop";
+        return "product";
     }
 
-    @GetMapping("/single-product")
-    public String singleproduct() {
-        return "single-product";
-    }
 }

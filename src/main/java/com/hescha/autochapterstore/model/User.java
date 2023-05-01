@@ -3,15 +3,18 @@ package com.hescha.autochapterstore.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @Table(name = "myUser")
 @Entity
 public class User extends AbstractEntity {
-    @Column(unique = true)
     private String username;
     @JsonIgnore
     private String password;
@@ -28,5 +31,21 @@ public class User extends AbstractEntity {
     @Override
     public String toString() {
         return username;
+    }
+
+    public boolean isManager() {
+        return roles.stream().anyMatch(role -> role.getRole().contains("MANAGER"));
+    }
+
+    public boolean isAdmin() {
+        return roles.stream().anyMatch(role -> role.getRole().contains("ADMIN"));
+    }
+
+    public boolean isManagerOrAdmin() {
+        return isAdmin() || isManager();
+    }
+
+    public List<Order> getActiveOrders() {
+        return orders.stream().filter(order -> order.getStatus() == OrderStatus.CREATED).collect(Collectors.toList());
     }
 }
