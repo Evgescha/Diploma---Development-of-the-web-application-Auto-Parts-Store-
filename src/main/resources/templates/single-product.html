@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Product Details :: Lukas - Car Parts Store eCommerce HTML Template</title>
+
+   <head th:replace="~{/commons/head :: head}"></head>
+</head>
+
+<body>
+
+    <!--== Start Header Area ==-->
+    <header class="header-area">
+        <div class="container container-wide">
+            <div class="row align-items-center">
+                <div class="col-sm-4 col-lg-2">
+                    <div class="site-logo text-center text-sm-left">
+                        <a href="index"><img src="/img/logo.png" alt="Logo" /></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 d-none d-lg-block">
+                    <div class="site-navigation">
+                        <ul class="main-menu nav">
+                            <li class="has-submenu"><a href="index">Home</a>
+                                <ul class="sub-menu">
+                                    <li><a href="index">Home 1</a></li>
+                                    <li><a href="index-2">Home 2</a></li>
+                                    <li><a href="index-boxed">Home Box Layout</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="about">About</a></li>
+                            <li class="has-submenu"><a href="shop">Shop</a>
+                                <ul class="sub-menu">
+                                    <li><a href="shop-left-sidebar">Shop Left Sidebar</a></li>
+                                    <li><a href="shop-right-sidebar">Shop Right Sidebar</a></li>
+                                    <li><a href="single-product">Single Product</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu"><a href="blog">blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog-left-sidebar">Blog Left Sidebar</a></li>
+                                    <li><a href="blog">Blog Right Sidebar</a></li>
+                                    <li><a href="blog-details">Single Blog</a></li>
+                                    <li><a href="blog-details-sidebar">Single Blog Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="gallery">Gallery</a></li>
+                            <li class="has-submenu"><a href="index">Pages</a>
+                                <ul class="sub-menu">
+                                    <li><a href="cart">Cart</a></li>
+                                    <li><a href="checkout">Checkout</a></li>
+                                    <li><a href="wishlist">Wishlist</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-8 col-lg-3">
+                    <div class="site-action d-flex justify-content-center justify-content-sm-end align-items-center">
+                        <ul class="login-reg-nav nav">
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Register</a></li>
+                        </ul>
+
+                        <div class="mini-cart-wrap">
+                            <a href="cart" class="btn-mini-cart">
+                                <i class="ion-bag"></i>
+                                <span class="cart-total">3</span>
+                            </a>
+
+                            <div class="mini-cart-content">
+                                <div class="mini-cart-product">
+                                    <div class="mini-product">
+                                        <div class="mini-product__thumb">
+                                            <a href="single-product"><img src="/img/product/product-1.png" alt="product" /></a>
+                                        </div>
+                                        <div class="mini-product__info">
+                                            <h2 class="title"><a href="single-product">Auto Clutch & Brake</a></h2>
+
+                                            <div class="mini-calculation">
+                                                <p class="price">5 x <span>$20.33</span></p>
+                                                <button class="remove-pro"><i class="ion-trash-b"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mini-product">
+                                        <div class="mini-product__thumb">
+                                            <a href="single-product"><img src="/img/product/product-2.png" alt="product" /></a>
+                                        </div>
+                                        <div class="mini-product__info">
+                                            <h2 class="title"><a href="single-product">Leather Steering Wheel</a></h2>
+
+                                            <div class="mini-calculation">
+                                                <p class="price">5 x <span>$20.33</span></p>
+                                                <button class="remove-pro"><i class="ion-trash-b"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mini-product">
+                                        <div class="mini-product__thumb">
+                                            <a href="single-product"><img src="/img/product/product-3.png" alt="product" /></a>
+                                        </div>
+                                        <div class="mini-product__info">
+                                            <h2 class="title"><a href="single-product">Leather Steering Wheel</a></h2>
+
+                                            <div class="mini-calculation">
+                                                <p class="price">5 x <span>$20.33</span></p>
+                                                <button class="remove-pro"><i class="ion-trash-b"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="responsive-menu d-lg-none">
+                            <button class="btn-menu">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--== End Header Area ==-->
+
+    <!--== Start Page Header Area ==-->
+    <div class="page-header-wrap bg-img" data-bg="/img/bg/page-header-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="page-header-content">
+                        <div class="page-header-content-inner">
+                            <h1>Product Details</h1>
+
+                            <ul class="breadcrumb">
+                                <li><a href="index">Home</a></li>
+                                <li><a href="shop">Shop</a></li>
+                                <li class="current"><a href="#">Product Details</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--== End Page Header Area ==-->
+
+    <!--== Start Page Content Wrapper ==-->
+    <div class="page-content-wrapper sp-y">
+        <div class="product-details-page-content">
+            <div class="container container-wide">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <!-- Start Product Thumbnail Area -->
+                            <div class="col-md-5">
+                                <div class="product-thumb-area">
+                                    <div class="product-details-thumbnail">
+                                        <div class="product-thumbnail-slider" id="thumb-gallery">
+                                            <figure class="pro-thumb-item" data-mfp-src="/img/product/product-details-1.png">
+                                                <img src="/img/product/product-details-1.png" alt="Product Details" />
+                                            </figure>
+                                            <figure class="pro-thumb-item" data-mfp-src="/img/product/product-details-2.png">
+                                                <img src="/img/product/product-details-2.png" alt="Product Details" />
+                                            </figure>
+                                            <figure class="pro-thumb-item" data-mfp-src="/img/product/product-details-3.png">
+                                                <img src="/img/product/product-details-3.png" alt="Product Details" />
+                                            </figure>
+                                            <figure class="pro-thumb-item" data-mfp-src="/img/product/product-details-4.png">
+                                                <img src="/img/product/product-details-4.png" alt="Product Details" />
+                                            </figure>
+                                            <figure class="pro-thumb-item" data-mfp-src="/img/product/product-details-5.png">
+                                                <img src="/img/product/product-details-5.png" alt="Product Details" />
+                                            </figure>
+                                        </div>
+
+                                        <a href="#thumb-gallery" class="btn-large-view btn-gallery-popup">View Larger <i class="fa fa-search-plus"></i></a>
+                                    </div>
+
+                                    <div class="product-details-thumbnail-nav">
+                                        <figure class="pro-thumb-item">
+                                            <img src="/img/product/product-1.png" alt="Product Details" />
+                                        </figure>
+                                        <figure class="pro-thumb-item">
+                                            <img src="/img/product/product-2.png" alt="Product Details" />
+                                        </figure>
+                                        <figure class="pro-thumb-item">
+                                            <img src="/img/product/product-3.png" alt="Product Details" />
+                                        </figure>
+                                        <figure class="pro-thumb-item">
+                                            <img src="/img/product/product-4.png" alt="Product Details" />
+                                        </figure>
+                                        <figure class="pro-thumb-item">
+                                            <img src="/img/product/product-5.png" alt="Product Details" />
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Product Thumbnail Area -->
+
+                            <!-- Start Product Info Area -->
+                            <div class="col-md-7">
+                                <div class="product-details-info-content-wrap">
+                                    <div class="prod-details-info-content">
+                                        <h2>Hanging 4K Camera</h2>
+                                        <h5 class="price"><strong>Price:</strong> <span class="price-amount">$325.00</span>
+                                        </h5>
+                                        <p>Pursue pleasure rationally encounter consequences that are extremely painful. Nor
+                                            again is there anyone who loves or pursues or desires to obtain pain of itself,
+                                            because it is pain, but because occasionally circles</p>
+                                        <p>Pursue pleasure rationally encounter consequences that are extremely painful. Nor
+                                            again is there anyone who loves or pursues or desires to obtain pain of itself,
+                                            because it is pain, but because occasionally circles occur in and pain can
+                                            procure him some great ple cum solute nobie est eligendi option</p>
+
+                                        <div class="product-config">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <th class="config-label">Color</th>
+                                                        <td class="config-option">
+                                                            <div class="config-color">
+                                                                <a href="#">Black</a>
+                                                                <a href="#">Blue</a>
+                                                                <a href="#">Green</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="config-label">Size</th>
+                                                        <td class="config-option">
+                                                            <div class="config-color">
+                                                                <a href="#">Large</a>
+                                                                <a href="#">Medium</a>
+                                                                <a href="#">Small</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-action">
+                                            <div class="action-top d-sm-flex">
+                                                <div class="pro-qty mr-3 mb-4 mb-sm-0">
+                                                    <label for="quantity" class="sr-only">Quantity</label>
+                                                    <input type="text" id="quantity" title="Quantity" value="1" />
+                                                </div>
+                                                <button class="btn btn-bordered">Add to Cart</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="product-meta">
+                                            <span class="sku_wrapper">SKU: <span class="sku">N/A</span></span>
+
+                                            <span class="posted_in">Categories:
+                                            <a href="#">Best Seller,</a>
+                                            <a href="#">Parts,</a>
+                                            <a href="#">Shop</a>
+                                        </span>
+
+                                            <span class="tagged_as">Tags:
+                                            <a href="#">Seller,</a>
+                                            <a href="#">Modern,</a>
+                                            <a href="#">Parts</a>
+                                        </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Product Info Area -->
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="product-description-review">
+                                    <!-- Product Description Tab Menu -->
+                                    <ul class="nav nav-tabs desc-review-tab-menu" id="desc-review-tab" role="tablist">
+                                        <li>
+                                            <a class="active" id="desc-tab" data-toggle="tab" href="#descriptionContent" role="tab">Description</a>
+                                        </li>
+                                        <li>
+                                            <a id="profile-tab" data-toggle="tab" href="#reviewContent">Review (3)</a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- Product Description Tab Content -->
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="descriptionContent">
+                                            <div class="description-content">
+                                                <p>Created from either wood or recycled materials, it can be moulded
+                                                    into just about any shape and hardens to provide a hard shell. Additives
+                                                    can
+                                                    make it water resistant and it can be produced in a rainbow of colours.
+                                                    Other materials being looked at include paper clay, paper glue, paper
+                                                    cotton
+                                                    and even washable paper.</p>
+
+                                                <p>Additives can make it water resistant and it can be produced in a rainbow
+                                                    of
+                                                    colours. Other materials being looked at include paper clay Lorem ipsum
+                                                    dolor
+                                                    sit amet, consectetur adipisicing elit. Eaque, facere!</p>
+                                                <p>Pursue pleasure rationally encounter consequences that are extremely
+                                                    painful. Nor again is there anyone who loves or pursues or desires to
+                                                    obtain pain of itself, because it is pain, but because occasionally
+                                                    circes occur in and pain can procure him some great ple cum soluta nobis
+                                                    est eligendi optio cumque nihil impedit quo minus id qu maxime placeat
+                                                    facere possimus, omnis voluptas assumenda est, omnis dolor
+                                                    repellendus</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane fade" id="reviewContent">
+                                            <div class="product-rating-wrap">
+                                                <div class="average-rating">
+                                                    <h4>4.8 <span>(Overall)</span></h4>
+                                                    <span>Based on 2 Comments</span>
+                                                </div>
+
+                                                <div class="display-ratings">
+                                                    <div class="rating-item">
+                                                        <div class="rating-author-pic">
+                                                            <img src="/img/extra/author-1.jpg" alt="author" />
+                                                        </div>
+
+                                                        <div class="rating-author-txt">
+                                                            <div class="rating-star">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                            </div>
+
+                                                            <div class="rating-meta">
+                                                                <h3>Cristopher Lee</h3>
+                                                                <span class="time">- 07, Jun</span>
+                                                            </div>
+
+                                                            <p>Wonderful collection of WooThemes classics! A must buy for
+                                                                all
+                                                                Woo fans.</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="rating-item">
+                                                        <div class="rating-author-pic">
+                                                            <img src="/img/extra/author-2.jpg" alt="author" />
+                                                        </div>
+
+                                                        <div class="rating-author-txt">
+                                                            <div class="rating-star">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star-half-empty"></i>
+                                                            </div>
+
+                                                            <div class="rating-meta">
+                                                                <h3>Raju Ahammad</h3>
+                                                                <span class="time">- 02, Jun</span>
+                                                            </div>
+
+                                                            <p>Voluptatem quia voluptas sit aspernat uptatem sequi Neque
+                                                                porro.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="rating-form-wrapper">
+                                                    <h3>Add your Reviews</h3>
+                                                    <form action="#" method="post">
+                                                        <div class="rating-form row">
+                                                            <div class="col-12">
+                                                                <h5>Your Rating:</h5>
+                                                                <div class="rating-star fix mb-20">
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-input-item mt-30 mt-md-0">
+                                                                    <label for="name" class="sr-only">Name</label>
+                                                                    <input type="text" id="name" placeholder="Name" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-input-item mt-30 mt-md-0">
+                                                                    <label for="email" class="sr-only">Email</label>
+                                                                    <input type="email" id="email" placeholder="Email" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-input-item mt-30 mb-40">
+                                                                    <label for="your-review" class="sr-only">review</label>
+                                                                    <textarea rows="4" name="review" id="your-review" placeholder="Write a review"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 mt-22">
+                                                                <button class="btn btn-brand">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--== End Page Content Wrapper ==-->
+
+    <!--== Start Footer Area Wrapper ==-->
+    <footer class="footer-area">
+        <div class="footer-widget-area">
+            <div class="container container-wide">
+                <div class="row mtn-40">
+                    <div class="col-lg-3">
+                        <div class="widget-item">
+                            <div class="about-widget">
+                                <a href="index"><img src="/img/logo-light.png" alt="Logo" /></a>
+                                <p>Lukas is the best parts shop for your car
+                                    accessories. What kind of parts do you
+                                    need you can get here soluta nobis</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-2">
+                        <div class="widget-item">
+                            <h4 class="widget-title">Information</h4>
+                            <div class="widget-body">
+                                <ul class="widget-list">
+                                    <li><a href="#">Our company</a></li>
+                                    <li><a href="#">Contact us</a></li>
+                                    <li><a href="#">Our services</a></li>
+                                    <li><a href="#">Why We?</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-2">
+                        <div class="widget-item">
+                            <h4 class="widget-title">Quicklink</h4>
+                            <div class="widget-body">
+                                <ul class="widget-list">
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Shop</a></li>
+                                    <li><a href="#">Cart</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-2">
+                        <div class="widget-item">
+                            <h4 class="widget-title">Support</h4>
+                            <div class="widget-body">
+                                <ul class="widget-list">
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Return Policy</a></li>
+                                    <li><a href="#">Online Support</a></li>
+                                    <li><a href="#">Money Back</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="widget-item">
+                            <h4 class="widget-title">Store Information</h4>
+                            <div class="widget-body">
+                                <address>
+                                    2005 Stokes Isle Apartment. 896, Washington 10010, USA <br>
+                                https://example.com <br>
+                                (+68) 120034509
+                            </address>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="copyright-content">
+                            <p>Copyright © 2019 Lukas. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--== End Footer Area Wrapper ==-->
+
+    <!-- Scroll Top Button -->
+    <button class="btn-scroll-top"><i class="ion-chevron-up"></i></button>
+
+
+
+    <!--== Start Responsive Menu Wrapper ==-->
+    <aside class="off-canvas-wrapper off-canvas-menu">
+        <div class="off-canvas-overlay"></div>
+        <div class="off-canvas-inner">
+            <!-- Start Off Canvas Content -->
+            <div class="off-canvas-content">
+                <div class="off-canvas-header">
+                    <div class="logo">
+                        <a href="index"><img src="/img/logo.png" alt="Logo"></a>
+                    </div>
+                    <div class="close-btn">
+                        <button class="btn-close"><i class="ion-android-close"></i></button>
+                    </div>
+                </div>
+
+                <!-- Content Auto Generate Form Main Menu Here -->
+                <div class="res-mobile-menu mobile-menu">
+
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!--== End Responsive Menu Wrapper ==-->
+
+
+    <!--=======================Javascript============================-->
+    <!-- build:js assets/js/app.min.js -->
+    <!--=== Modernizr Min Js ===-->
+    <script src="/js/modernizr-3.6.0.min.js"></script>
+    <!--=== jQuery Min Js ===-->
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <!--=== jQuery Migration Min Js ===-->
+    <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+    <!--=== Popper Min Js ===-->
+    <script src="/js/popper.min.js"></script>
+    <!--=== Bootstrap Min Js ===-->
+    <script src="/js/bootstrap.min.js"></script>
+    <!--=== Slicknav Min Js ===-->
+    <script src="/js/jquery.slicknav.min.js"></script>
+    <!--=== Magnific Popup Min Js ===-->
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <!--=== Slick Slider Min Js ===-->
+    <script src="/js/slick.min.js"></script>
+    <!--=== Nice Select Min Js ===-->
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <!--=== Leaflet Min Js ===-->
+    <script src="/js/leaflet.min.js"></script>
+    <!--=== Countdown Js ===-->
+    <script src="/js/countdown.js"></script>
+
+    <!--=== Active Js ===-->
+    <script src="/js/active.js"></script>
+    <!-- endbuild -->
+
+</body>
+
+</html>

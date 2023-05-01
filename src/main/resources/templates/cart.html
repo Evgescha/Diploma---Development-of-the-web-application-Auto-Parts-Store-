@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Shopping Cart :: Lukas - Car Parts Store eCommerce HTML Template</title>
+
+   <head th:replace="~{/commons/head :: head}"></head>
+</head>
+
+<body>
+
+    <!--== Start Header Area ==-->
+    <header class="header-area">
+        <div class="container container-wide">
+            <div class="row align-items-center">
+                <div class="col-sm-4 col-lg-2">
+                    <div class="site-logo text-center text-sm-left">
+                        <a href="index"><img src="/img/logo.png" alt="Logo" /></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 d-none d-lg-block">
+                    <div class="site-navigation">
+                        <ul class="main-menu nav">
+                            <li class="has-submenu"><a href="index">Home</a>
+                                <ul class="sub-menu">
+                                    <li><a href="index">Home 1</a></li>
+                                    <li><a href="index-2">Home 2</a></li>
+                                    <li><a href="index-boxed">Home Box Layout</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="about">About</a></li>
+                            <li class="has-submenu"><a href="shop">Shop</a>
+                                <ul class="sub-menu">
+                                    <li><a href="shop-left-sidebar">Shop Left Sidebar</a></li>
+                                    <li><a href="shop-right-sidebar">Shop Right Sidebar</a></li>
+                                    <li><a href="single-product">Single Product</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu"><a href="blog">blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog-left-sidebar">Blog Left Sidebar</a></li>
+                                    <li><a href="blog">Blog Right Sidebar</a></li>
+                                    <li><a href="blog-details">Single Blog</a></li>
+                                    <li><a href="blog-details-sidebar">Single Blog Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="gallery">Gallery</a></li>
+                            <li class="has-submenu"><a href="index">Pages</a>
+                                <ul class="sub-menu">
+                                    <li><a href="cart">Cart</a></li>
+                                    <li><a href="checkout">Checkout</a></li>
+                                    <li><a href="wishlist">Wishlist</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-8 col-lg-3">
+                    <div class="site-action d-flex justify-content-center justify-content-sm-end align-items-center">
+                        <ul class="login-reg-nav nav">
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Register</a></li>
+                        </ul>
+
+                        <div class="mini-cart-wrap">
+                            <a href="cart" class="btn-mini-cart">
+                                <i class="ion-bag"></i>
+                                <span class="cart-total">3</span>
+                            </a>
+
+                            <div class="mini-cart-content">
+                                <div class="mini-cart-product">
+                                    <div class="mini-product">
+                                        <div class="mini-product__thumb">
+                                            <a href="single-product"><img src="/img/product/product-1.png" alt="product" /></a>
+                                        </div>
+                                        <div class="mini-product__info">
+                                            <h2 class="title"><a href="single-product">Auto Clutch & Brake</a></h2>
+
+                                            <div class="mini-calculation">
+                                                <p class="price">5 x <span>$20.33</span></p>
+                                                <button class="remove-pro"><i class="ion-trash-b"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mini-product">
+                                        <div class="mini-product__thumb">
+                                            <a href="single-product"><img src="/img/product/product-2.png" alt="product" /></a>
+                                        </div>
+                                        <div class="mini-product__info">
+                                            <h2 class="title"><a href="single-product">Leather Steering Wheel</a></h2>
+
+                                            <div class="mini-calculation">
+                                                <p class="price">5 x <span>$20.33</span></p>
+                                                <button class="remove-pro"><i class="ion-trash-b"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mini-product">
+                                        <div class="mini-product__thumb">
+                                            <a href="single-product"><img src="/img/product/product-3.png" alt="product" /></a>
+                                        </div>
+                                        <div class="mini-product__info">
+                                            <h2 class="title"><a href="single-product">Leather Steering Wheel</a></h2>
+
+                                            <div class="mini-calculation">
+                                                <p class="price">5 x <span>$20.33</span></p>
+                                                <button class="remove-pro"><i class="ion-trash-b"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="responsive-menu d-lg-none">
+                            <button class="btn-menu">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--== End Header Area ==-->
+
+    <!--== Start Page Header Area ==-->
+    <div class="page-header-wrap bg-img" data-bg="/img/bg/page-header-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="page-header-content">
+                        <div class="page-header-content-inner">
+                            <h1>Shopping Cart</h1>
+
+                            <ul class="breadcrumb">
+                                <li><a href="index">Home</a></li>
+                                <li><a href="shop">Shop</a></li>
+                                <li class="current"><a href="#">Cart</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--== End Page Header Area ==-->
+
+    <!--== Start Page Content Wrapper ==-->
+    <div class="page-content-wrapper sp-y">
+        <div class="cart-page-content-wrap">
+            <div class="container container-wide">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="shopping-cart-list-area">
+                            <div class="shopping-cart-table table-responsive">
+                                <table class="table table-bordered text-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Products</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td class="product-list">
+                                                <div class="cart-product-item d-flex align-items-center">
+                                                    <div class="remove-icon">
+                                                        <button><i class="fa fa-trash-o"></i></button>
+                                                    </div>
+                                                    <a href="single-product" class="product-thumb">
+                                                        <img src="/img/product/product-1.png" alt="Product" />
+                                                    </a>
+                                                    <a href="single-product" class="product-name">Metallic cotton
+                                                        dress</a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$29.99</span>
+                                            </td>
+                                            <td>
+                                                <div class="pro-qty">
+                                                    <input type="text" class="quantity" title="Quantity" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$29.99</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="product-list">
+                                                <div class="cart-product-item d-flex align-items-center">
+                                                    <div class="remove-icon">
+                                                        <button><i class="fa fa-trash-o"></i></button>
+                                                    </div>
+                                                    <a href="single-product" class="product-thumb">
+                                                        <img src="/img/product/product-2.png" alt="Product" />
+                                                    </a>
+                                                    <a href="single-product" class="product-name">Open-knit sweater</a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$39.99</span>
+                                            </td>
+                                            <td>
+                                                <div class="pro-qty">
+                                                    <input type="text" class="quantity" title="Quantity" value="3" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$39.99</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="product-list">
+                                                <div class="cart-product-item d-flex align-items-center">
+                                                    <div class="remove-icon">
+                                                        <button><i class="fa fa-trash-o"></i></button>
+                                                    </div>
+                                                    <a href="single-product" class="product-thumb">
+                                                        <img src="/img/product/product-3.png" alt="Product" />
+                                                    </a>
+                                                    <a href="single-product" class="product-name">Metallic cotton
+                                                        dress</a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$29.99</span>
+                                            </td>
+                                            <td>
+                                                <div class="pro-qty">
+                                                    <input type="text" class="quantity" title="Quantity" value="2" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$29.99</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="product-list">
+                                                <div class="cart-product-item d-flex align-items-center">
+                                                    <div class="remove-icon">
+                                                        <button><i class="fa fa-trash-o"></i></button>
+                                                    </div>
+                                                    <a href="single-product" class="product-thumb">
+                                                        <img src="/img/product/product-4.png" alt="Product" />
+                                                    </a>
+                                                    <a href="single-product" class="product-name">Open-knit
+                                                        sweater</a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$39.99</span>
+                                            </td>
+                                            <td>
+                                                <div class="pro-qty">
+                                                    <input type="text" class="quantity" title="Quantity" value="5" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$39.99</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="product-list">
+                                                <div class="cart-product-item d-flex align-items-center">
+                                                    <div class="remove-icon">
+                                                        <button><i class="fa fa-trash-o"></i></button>
+                                                    </div>
+                                                    <a href="single-product" class="product-thumb">
+                                                        <img src="/img/product/product-5.png" alt="Product" />
+                                                    </a>
+                                                    <a href="single-product" class="product-name">Metallic cotton
+                                                        dress</a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$29.99</span>
+                                            </td>
+                                            <td>
+                                                <div class="pro-qty">
+                                                    <input type="text" class="quantity" title="Quantity" value="3" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$29.99</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="product-list">
+                                                <div class="cart-product-item d-flex align-items-center">
+                                                    <div class="remove-icon">
+                                                        <button><i class="fa fa-trash-o"></i></button>
+                                                    </div>
+                                                    <a href="single-product" class="product-thumb">
+                                                        <img src="/img/product/product-6.png" alt="Product" />
+                                                    </a>
+                                                    <a href="single-product" class="product-name">Open-knit
+                                                        sweater</a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$39.99</span>
+                                            </td>
+                                            <td>
+                                                <div class="pro-qty">
+                                                    <input type="text" class="quantity" title="Quantity" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$39.99</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="product-list">
+                                                <div class="cart-product-item d-flex align-items-center">
+                                                    <div class="remove-icon">
+                                                        <button><i class="fa fa-trash-o"></i></button>
+                                                    </div>
+                                                    <a href="single-product" class="product-thumb">
+                                                        <img src="/img/product/product-7.png" alt="Product" />
+                                                    </a>
+                                                    <a href="single-product" class="product-name">Open-knit
+                                                        sweater</a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$39.99</span>
+                                            </td>
+                                            <td>
+                                                <div class="pro-qty">
+                                                    <input type="text" class="quantity" title="Quantity" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="price">$39.99</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="cart-coupon-update-area d-sm-flex justify-content-between align-items-center">
+                                <div class="coupon-form-wrap">
+                                    <form action="#" method="post">
+                                        <label for="coupon" class="sr-only">Coupon Code</label>
+                                        <input type="text" id="coupon" placeholder="Coupon Code" />
+                                        <button class="btn-apply">Apply Button</button>
+                                    </form>
+                                </div>
+
+                                <div class="cart-update-buttons mt-15 mt-sm-0">
+                                    <button class="btn-clear-cart">Clear Cart</button>
+                                    <button class="btn-update-cart">Update Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <!-- Cart Calculate Area -->
+                        <div class="cart-calculate-area mt-sm-40 mt-md-60">
+                            <h5 class="cal-title">Cart Totals</h5>
+
+                            <div class="cart-cal-table table-responsive">
+                                <table class="table table-borderless">
+                                    <tr class="cart-sub-total">
+                                        <th>Subtotal</th>
+                                        <td>$289.89</td>
+                                    </tr>
+                                    <tr class="shipping">
+                                        <th>Shipping</th>
+                                        <td>
+                                            <ul class="shipping-method">
+                                                <li>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="flat_shipping" name="shipping_method" class="custom-control-input" checked />
+                                                        <label class="custom-control-label" for="flat_shipping">Flat Rate :
+                                                            $10</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="free_shipping" name="shipping_method" class="custom-control-input" />
+                                                        <label class="custom-control-label" for="free_shipping">Free
+                                                            Shipping</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="cod_shipping" name="shipping_method" class="custom-control-input" />
+                                                        <label class="custom-control-label" for="cod_shipping">Cash on
+                                                            Delivery</label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="order-total">
+                                        <th>Total</th>
+                                        <td><b>$299.93</b></td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="proceed-checkout-btn">
+                                <a href="checkout" class="btn btn-brand d-block">Proceed to Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--== End Page Content Wrapper ==-->
+
+    <!--== Start Footer Area Wrapper ==-->
+    <footer class="footer-area">
+        <div class="footer-widget-area">
+            <div class="container container-wide">
+                <div class="row mtn-40">
+                    <div class="col-lg-3">
+                        <div class="widget-item">
+                            <div class="about-widget">
+                                <a href="index"><img src="/img/logo-light.png" alt="Logo" /></a>
+                                <p>Lukas is the best parts shop for your car
+                                    accessories. What kind of parts do you
+                                    need you can get here soluta nobis</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-2">
+                        <div class="widget-item">
+                            <h4 class="widget-title">Information</h4>
+                            <div class="widget-body">
+                                <ul class="widget-list">
+                                    <li><a href="#">Our company</a></li>
+                                    <li><a href="#">Contact us</a></li>
+                                    <li><a href="#">Our services</a></li>
+                                    <li><a href="#">Why We?</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-2">
+                        <div class="widget-item">
+                            <h4 class="widget-title">Quicklink</h4>
+                            <div class="widget-body">
+                                <ul class="widget-list">
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Shop</a></li>
+                                    <li><a href="#">Cart</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-2">
+                        <div class="widget-item">
+                            <h4 class="widget-title">Support</h4>
+                            <div class="widget-body">
+                                <ul class="widget-list">
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Return Policy</a></li>
+                                    <li><a href="#">Online Support</a></li>
+                                    <li><a href="#">Money Back</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="widget-item">
+                            <h4 class="widget-title">Store Information</h4>
+                            <div class="widget-body">
+                                <address>
+                                    2005 Stokes Isle Apartment. 896, Washington 10010, USA <br>
+                                https://example.com <br>
+                                (+68) 120034509
+                            </address>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="copyright-content">
+                            <p>Copyright © 2019 Lukas. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--== End Footer Area Wrapper ==-->
+
+    <!-- Scroll Top Button -->
+    <button class="btn-scroll-top"><i class="ion-chevron-up"></i></button>
+
+
+
+    <!--== Start Responsive Menu Wrapper ==-->
+    <aside class="off-canvas-wrapper off-canvas-menu">
+        <div class="off-canvas-overlay"></div>
+        <div class="off-canvas-inner">
+            <!-- Start Off Canvas Content -->
+            <div class="off-canvas-content">
+                <div class="off-canvas-header">
+                    <div class="logo">
+                        <a href="index"><img src="/img/logo.png" alt="Logo"></a>
+                    </div>
+                    <div class="close-btn">
+                        <button class="btn-close"><i class="ion-android-close"></i></button>
+                    </div>
+                </div>
+
+                <!-- Content Auto Generate Form Main Menu Here -->
+                <div class="res-mobile-menu mobile-menu">
+
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!--== End Responsive Menu Wrapper ==-->
+
+
+    <!--=======================Javascript============================-->
+    <!-- build:js assets/js/app.min.js -->
+    <!--=== Modernizr Min Js ===-->
+    <script src="/js/modernizr-3.6.0.min.js"></script>
+    <!--=== jQuery Min Js ===-->
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <!--=== jQuery Migration Min Js ===-->
+    <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+    <!--=== Popper Min Js ===-->
+    <script src="/js/popper.min.js"></script>
+    <!--=== Bootstrap Min Js ===-->
+    <script src="/js/bootstrap.min.js"></script>
+    <!--=== Slicknav Min Js ===-->
+    <script src="/js/jquery.slicknav.min.js"></script>
+    <!--=== Magnific Popup Min Js ===-->
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <!--=== Slick Slider Min Js ===-->
+    <script src="/js/slick.min.js"></script>
+    <!--=== Nice Select Min Js ===-->
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <!--=== Leaflet Min Js ===-->
+    <script src="/js/leaflet.min.js"></script>
+    <!--=== Countdown Js ===-->
+    <script src="/js/countdown.js"></script>
+
+    <!--=== Active Js ===-->
+    <script src="/js/active.js"></script>
+    <!-- endbuild -->
+
+</body>
+
+</html>
