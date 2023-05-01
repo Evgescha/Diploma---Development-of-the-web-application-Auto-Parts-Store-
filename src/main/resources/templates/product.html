@@ -4,80 +4,61 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>Shop Left Sidebar :: Lukas - Car Parts Store eCommerce HTML Template</title>
+    <title>Products</title>
 
-   <head th:replace="~{/commons/head :: head}"></head>
+    <head th:replace="~{/commons/head :: head}"></head>
 </head>
 
 <body>
 
-    <header th:replace="~{/commons/header :: header}"></header>
+<header th:replace="~{/commons/header :: header}"></header>
 
-    <!--== Start Page Header Area ==-->
-    <div class="page-header-wrap bg-img" data-bg="/img/bg/page-header-bg.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="page-header-content">
-                        <div class="page-header-content-inner">
-                            <h1>Shop Left Sidebar</h1>
+<!--== Start Page Header Area ==-->
+<div class="page-header-wrap bg-img" data-bg="/img/bg/page-header-bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="page-header-content">
+                    <div class="page-header-content-inner">
+                        <h1>Product info</h1>
 
-                            <ul class="breadcrumb">
-                                <li><a href="index">Home</a></li>
-                                <li class="current"><a href="#">Shop</a></li>
-                            </ul>
-                        </div>
+                        <ul class="breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li class="current"><a href="#">Shop</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--== End Page Header Area ==-->
+</div>
+<!--== End Page Header Area ==-->
 
-    <!--== Start Page Content Wrapper ==-->
-    <div class="page-content-wrapper sp-y">
-        <div class="container container-wide">
-            <div class="row">
-                <div class="col-lg-3 order-1 order-lg-0">
-                    <div class="sidebar-area">
-                        <div class="sidebar-item">
-                            <h4 class="sidebar-title">Product categories</h4>
-                            <div class="sidebar-body">
-                                <ul class="sidebar-list">
-                                    <li><a href="#">All Product</a></li>
-                                    <li><a href="#">Best Seller</a></li>
-                                    <li><a href="#">Car</a></li>
-                                    <li><a href="#">Parts</a></li>
-                                    <li><a href="#">Shop</a></li>
-                                    <li><a href="#">Tayer</a></li>
-                                    <li><a href="#">Uncategorized</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!--== Start Page Content Wrapper ==-->
+<div class="page-content-wrapper sp-y">
+    <div class="container container-wide">
+        <div class="row">
+            <div class="col-lg-9 order-0 order-lg-1">
 
-                <div class="col-lg-9 order-0 order-lg-1">
+                <div class="product-wrapper product-layout layout-grid">
+                    <div class="row mtn-30">
+                        <!-- Start Product Item -->
+                        <div class="col-sm-6 col-lg-4">
+                            <div class="product-item">
+                                <div class="product-item__thumb">
+                                    <a href="single-product">
+                                        <img class="thumb-primary " th:src="/img/product/product-6.png" alt="Product"/>
+                                        <img class="thumb-secondary" src="/img/product/product-7.png" alt="Product"/>
+                                    </a>
+                                </div>
 
-                    <div class="product-wrapper product-layout layout-grid">
-                        <div class="row mtn-30">
-                            <!-- Start Product Item -->
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="product-item">
-                                    <div class="product-item__thumb">
-                                        <a href="single-product">
-                                            <img class="thumb-primary " src="/img/product/product-6.png" alt="Product" />
-                                            <img class="thumb-secondary" src="/img/product/product-7.png" alt="Product" />
-                                        </a>
+                                <div class="product-item__content">
+                                    <div class="product-item__info">
+                                        <h4 class="title"><a href="single-product">Auto Clutch & Brake</a></h4>
+                                        <span class="price"><strong>Price:</strong> $165.00</span>
                                     </div>
-
-                                    <div class="product-item__content">
-                                        <div class="product-item__info">
-                                            <h4 class="title"><a href="single-product">Auto Clutch & Brake</a></h4>
-                                            <span class="price"><strong>Price:</strong> $165.00</span>
-                                        </div>
                                 </div>
                             </div>
                             <!-- End Product Item -->
@@ -88,16 +69,12 @@
             </div>
         </div>
     </div>
-    <!--== End Page Content Wrapper ==-->
+</div>
+<!--== End Page Content Wrapper ==-->
 
-   <footer th:replace="~{/commons/footer :: footer}"></footer>
+<footer th:replace="~{/commons/footer :: footer}"></footer>
 
-    <!-- Scroll Top Button -->
-    <button class="btn-scroll-top"><i class="ion-chevron-up"></i></button>
-
-
-
-    <div th:replace="~{/commons/script :: script}"></div>
+<div th:replace="~{/commons/script :: script}"></div>
 
 </body>
 

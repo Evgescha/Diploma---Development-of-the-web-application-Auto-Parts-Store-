@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Product Details :: Lukas - Car Parts Store eCommerce HTML Template</title>
+    <title>Product Details</title>
 
    <head th:replace="~{/commons/head :: head}"></head>
 </head>
@@ -49,8 +49,8 @@
                                 <div class="product-thumb-area">
                                     <div class="product-details-thumbnail">
                                         <div class="product-thumbnail-slider" id="thumb-gallery">
-                                            <figure class="pro-thumb-item" data-mfp-src="/img/product/product-details-1.png">
-                                                <img src="/img/product/product-details-1.png" alt="Product Details" />
+                                            <figure class="pro-thumb-item">
+                                                <img th:src="${entity.image}" alt="Product Details" />
                                             </figure>
                                         </div>
                                     </div>
@@ -62,22 +62,32 @@
                             <div class="col-md-7">
                                 <div class="product-details-info-content-wrap">
                                     <div class="prod-details-info-content">
-                                        <h2>Hanging 4K Camera</h2>
-                                        <h5 class="price"><strong>Price:</strong> <span class="price-amount">$325.00</span>
+                                        <h2 th:text="${entity.name}">Hanging 4K Camera</h2>
+                                        <h5 class="price"><strong>Price:</strong> <span class="price-amount" th:text="${entity.price}">$325.00</span>
                                         </h5>
 
 
-                                        <div class="product-action">
+                                        <form class="product-action"
+                                              th:if="${#request.userPrincipal != null}"
+                                              th:action="'/order/addProduct/'+${entity.id}"
+                                              method="get">
                                             <div class="action-top d-sm-flex">
                                                 <div class="pro-qty mr-3 mb-4 mb-sm-0">
                                                     <label for="quantity" class="sr-only">Quantity</label>
-                                                    <input type="text" id="quantity" title="Quantity" value="1" />
+                                                    <input type="text" id="quantity" title="Quantity" value="1" required min="1"  name="count" />
                                                 </div>
                                                 <button class="btn btn-bordered">Add to Cart</button>
                                             </div>
-                                        </div>
+                                        </form>
 
-                                        <p>Pursue pleasure rationally encounter consequences that are extremely painful. Nor
+                                        <a class="btn btn-primary"
+                                           th:if="${#request.isUserInRole('ADMIN') or #request.isUserInRole('MANAGER') }"
+                                           th:href="@{/product/edit/{id}(id=${entity.id})}">Edit Product</a>
+                                        <a class="btn btn-danger"
+                                           th:if="${#request.isUserInRole('ADMIN') or #request.isUserInRole('MANAGER') }"
+                                           th:href="@{/product/{id}/delete(id=${entity.id})}">Delete Product</a>
+
+                                        <p th:text="${entity.shortDescription}">Pursue pleasure rationally encounter consequences that are extremely painful. Nor
                                             again is there anyone who loves or pursues or desires to obtain pain of itself,
                                             because it is pain, but because occasionally circles</p>
                                     </div>
@@ -95,7 +105,7 @@
                                             <a class="active" id="desc-tab" data-toggle="tab" href="#descriptionContent" role="tab">Description</a>
                                         </li>
                                         <li>
-                                            <a id="profile-tab" data-toggle="tab" href="#reviewContent">Review (3)</a>
+                                            <a id="profile-tab" data-toggle="tab" href="#reviewContent">Review</a>
                                         </li>
                                     </ul>
 
@@ -103,7 +113,7 @@
                                     <div class="tab-content" id="myTabContent">
                                         <div class="tab-pane fade show active" id="descriptionContent">
                                             <div class="description-content">
-                                                <p>Created from either wood or recycled materials, it can be moulded
+                                                <p th:utext="${entity.description}">Created from either wood or recycled materials, it can be moulded
                                                     into just about any shape and hardens to provide a hard shell. Additives
                                                     can
                                                     make it water resistant and it can be produced in a rainbow of colours.
@@ -116,19 +126,20 @@
                                         <div class="tab-pane fade" id="reviewContent">
                                             <div class="product-rating-wrap">
                                                 <div class="display-ratings">
-                                                    <div class="rating-item">
+
+                                                    <div class="rating-item" th:each="comments_item : ${entity.comments}">
                                                         <div class="rating-author-pic">
-                                                            <img src="/img/extra/author-1.jpg" alt="author" />
+                                                            <img th:src="${comments_item.owner.image}" alt="author" />
                                                         </div>
 
                                                         <div class="rating-author-txt">
 
                                                             <div class="rating-meta">
-                                                                <h3>Cristopher Lee</h3>
-                                                                <span class="time">- 07, Jun</span>
+                                                                <h3 th:text="${comments_item.owner.username}">Cristopher Lee</h3>
+                                                                <span class="time" th:text="${comments_item.creationDate}">- 07, Jun</span>
                                                             </div>
 
-                                                            <p>Wonderful collection of WooThemes classics! A must buy for
+                                                            <p th:text="${comments_item.message}">Wonderful collection of WooThemes classics! A must buy for
                                                                 all
                                                                 Woo fans.</p>
                                                         </div>
@@ -136,14 +147,14 @@
 
                                                 </div>
 
-                                                <div class="rating-form-wrapper">
+                                                <div class="rating-form-wrapper"  th:if="${#request.userPrincipal != null}">
                                                     <h3>Add your Reviews</h3>
-                                                    <form action="#" method="post">
+                                                    <form role="form" class="cnt-form" method="post" action="/comment">
                                                         <div class="rating-form row">
                                                             <div class="col-12">
                                                                 <div class="form-input-item mt-30 mb-40">
                                                                     <label for="your-review" class="sr-only">review</label>
-                                                                    <textarea rows="4" name="review" id="your-review" placeholder="Write a review"></textarea>
+                                                                    <textarea name="message" rows="4" id="your-review" placeholder="Write a review"></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 mt-22">

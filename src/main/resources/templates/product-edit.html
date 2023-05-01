@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Shop Left Sidebar :: Lukas - Car Parts Store eCommerce HTML Template</title>
+
+   <head th:replace="~{/commons/head :: head}"></head>
+</head>
+
+<body>
+
+    <header th:replace="~{/commons/header :: header}"></header>
+
+    <!--== Start Page Header Area ==-->
+    <div class="page-header-wrap bg-img" data-bg="/img/bg/page-header-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="page-header-content">
+                        <div class="page-header-content-inner">
+                            <h1>Shop Left Sidebar</h1>
+
+                            <ul class="breadcrumb">
+                                <li><a href="/">Home</a></li>
+                                <li class="current"><a href="#">Product edit</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--== End Page Header Area ==-->
+
+
+    <div class="page-content-wrapper sp-y">
+        <div class="cart-page-content-wrap">
+            <div class="container container-wide">
+
+                <div class="row">
+                    <div class="col-md-12 billing-form-wrap">
+                        <h4 class="">Add New Product</h4>
+                        <form class="register-form outer-top-xs" role="form" method="post" action="/product"  th:object="${entity}">
+                            <div class="form-group">
+                                <label class="info-title" for="name">Product Name <span>*</span></label>
+                                <input type="text" class="form-control unicase-form-control text-input"  th:field="*{name}" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="info-title" for="shortDescription">Short Description <span>*</span></label>
+                                <textarea class="form-control unicase-form-control text-input"  th:field="*{shortDescription}" id="shortDescription" name="shortDescription" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="newsItemField">
+                                    <label>Текст</label>
+                                    <div id="richTextEditor" class="richTextEditor">
+                                        <script type="text/javascript">
+                                            tinymce.init({
+                                                selector: '#mytextarea'
+                                            });
+                                        </script>
+                                        <textarea id="editor" name="description" th:utext="${entity.description}">
+                              Hello, World!
+                            </textarea>
+                                        <input type="submit" value="Сохранить" class="myButton">
+                                        <script>
+                                            tinymce
+                                                .init({
+                                                    selector: '#editor',
+                                                    plugins: 'image code',
+                                                    toolbar: 'undo redo | link image | code',
+                                                    image_title: true,
+                                                    automatic_uploads: true,
+                                                    tinycomments_author: 'Yauhescha',
+                                                    file_picker_types: 'image',
+                                                    file_picker_callback: function (cb, value, meta) {
+                                                        var input = document.createElement('input');
+                                                        input.setAttribute('type', 'file');
+                                                        input.setAttribute('accept', 'image/*');
+
+                                                        input.onchange = function () {
+                                                            var file = this.files[0];
+
+                                                            var reader = new FileReader();
+                                                            reader.onload = function () {
+                                                                var id = 'blobid' + (new Date()).getTime();
+                                                                var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                                                                var base64 = reader.result.split(',')[1];
+                                                                var blobInfo = blobCache.create(id, file,
+                                                                    base64);
+                                                                blobCache.add(blobInfo);
+
+                                                                cb(blobInfo.blobUri(), {
+                                                                    title: file.name
+                                                                });
+                                                            };
+                                                            reader.readAsDataURL(file);
+                                                        };
+
+                                                        input.click();
+                                                    },
+                                                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                                                });
+                                        </script>
+                                    </div>
+                                </div></div>
+                            <div class="form-group">
+                                <label class="info-title" for="image">Image URL <span>*</span></label>
+                                <input type="text" class="form-control unicase-form-control text-input"  th:field="*{image}" id="image" name="image" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="info-title" for="price">Price <span>*</span></label>
+                                <input type="number" step="0.01" class="form-control unicase-form-control text-input" th:field="*{price}"  id="price" name="price" min="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="info-title" for="category">Category <span>*</span></label>
+                                <select class="form-control unicase-form-control text-input" id="category" name="category" required>
+                                    <option value="OIL">Масло</option>
+                                    <option value="ACCUMULATOR">Аккумулятор</option>
+                                    <option value="DISK">Диски</option>
+                                    <option value="SHINE">Шины</option>
+                                    <option value="OTHER">Другое</option>
+                                </select>
+                            </div>
+                            <input type="text" th:field="*{id}" id="id" hidden>
+                            <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Add Product</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer th:replace="~{/commons/footer :: footer}"></footer>
+
+    <div th:replace="~{/commons/script :: script}"></div>
+
+</body>
+
+</html>

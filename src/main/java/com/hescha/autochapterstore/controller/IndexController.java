@@ -22,19 +22,4 @@ public class IndexController {
         return "contact";
     }
 
-    @GetMapping("/cart")
-    public String cart() {
-        return "cart";
-    }
-
-    @GetMapping("/checkout")
-    public String checkout() {
-        return "checkout";
-    }
-
-    @GetMapping("/shop")
-    public String shop() {
-        return "product";
-    }
-
 }
