@@ -6,6 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
 
+    @GetMapping(path = {"/index", "/"})
+    public String index() {
+        return "index";
+    }
+
     @GetMapping("/about")
     public String about() {
         return "about";
@@ -24,11 +29,6 @@ public class IndexController {
     @GetMapping("/contact")
     public String contact() {
         return "contact";
-    }
-
-    @GetMapping(path = {"/index", "/"})
-    public String index() {
-        return "index";
     }
 
     @GetMapping("/shop")
