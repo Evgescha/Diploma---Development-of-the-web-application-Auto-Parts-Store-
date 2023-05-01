@@ -27,7 +27,7 @@
                             <ul class="breadcrumb">
                                 <li><a href="/">Home</a></li>
                                 <li><a href="/product">Shop</a></li>
-                                <li class="current"><a href="#">Cart</a></li>
+                                <li class="current"><a href="#">Orders</a></li>
                             </ul>
                         </div>
                     </div>
@@ -37,292 +37,160 @@
     </div>
     <!--== End Page Header Area ==-->
 
-    <!--== Start Page Content Wrapper ==-->
-    <div class="page-content-wrapper sp-y">
-        <div class="cart-page-content-wrap">
-            <div class="container container-wide">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="shopping-cart-list-area">
-                            <div class="shopping-cart-table table-responsive">
-                                <table class="table table-bordered text-center mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th>Products</th>
-                                            <th>Price</th>
-                                            <th>Quantity</th>
-                                            <th>Total</th>
-                                        </tr>
-                                    </thead>
+    <div class="container-xxl py-6 mt-5">
+        <div class="container">
+            <div class="section-header text-center mx-auto mb-5">
+                <h1 class="display-5 mb-3">Orders</h1>
+                <h3 th:if="${message != null}" th:text="${message}" class="text-center"></h3>
+            </div>
+        </div>
+    </div>
 
-                                    <tbody>
-                                        <tr>
-                                            <td class="product-list">
-                                                <div class="cart-product-item d-flex align-items-center">
-                                                    <div class="remove-icon">
-                                                        <button><i class="fa fa-trash-o"></i></button>
-                                                    </div>
-                                                    <a href="single-product" class="product-thumb">
-                                                        <img src="/img/product/product-1.png" alt="Product" />
-                                                    </a>
-                                                    <a href="single-product" class="product-name">Metallic cotton
-                                                        dress</a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="price">$29.99</span>
-                                            </td>
-                                            <td>
-                                                <div class="pro-qty">
-                                                    <input type="text" class="quantity" title="Quantity" value="1" />
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="price">$29.99</span>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="product-list">
-                                                <div class="cart-product-item d-flex align-items-center">
-                                                    <div class="remove-icon">
-                                                        <button><i class="fa fa-trash-o"></i></button>
-                                                    </div>
-                                                    <a href="single-product" class="product-thumb">
-                                                        <img src="/img/product/product-2.png" alt="Product" />
-                                                    </a>
-                                                    <a href="single-product" class="product-name">Open-knit sweater</a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="price">$39.99</span>
-                                            </td>
-                                            <td>
-                                                <div class="pro-qty">
-                                                    <input type="text" class="quantity" title="Quantity" value="3" />
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="price">$39.99</span>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="product-list">
-                                                <div class="cart-product-item d-flex align-items-center">
-                                                    <div class="remove-icon">
-                                                        <button><i class="fa fa-trash-o"></i></button>
-                                                    </div>
-                                                    <a href="single-product" class="product-thumb">
-                                                        <img src="/img/product/product-3.png" alt="Product" />
-                                                    </a>
-                                                    <a href="single-product" class="product-name">Metallic cotton
-                                                        dress</a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="price">$29.99</span>
-                                            </td>
-                                            <td>
-                                                <div class="pro-qty">
-                                                    <input type="text" class="quantity" title="Quantity" value="2" />
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="price">$29.99</span>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="product-list">
-                                                <div class="cart-product-item d-flex align-items-center">
-                                                    <div class="remove-icon">
-                                                        <button><i class="fa fa-trash-o"></i></button>
-                                                    </div>
-                                                    <a href="single-product" class="product-thumb">
-                                                        <img src="/img/product/product-4.png" alt="Product" />
-                                                    </a>
-                                                    <a href="single-product" class="product-name">Open-knit
-                                                        sweater</a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="price">$39.99</span>
-                                            </td>
-                                            <td>
-                                                <div class="pro-qty">
-                                                    <input type="text" class="quantity" title="Quantity" value="5" />
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="price">$39.99</span>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="product-list">
-                                                <div class="cart-product-item d-flex align-items-center">
-                                                    <div class="remove-icon">
-                                                        <button><i class="fa fa-trash-o"></i></button>
-                                                    </div>
-                                                    <a href="single-product" class="product-thumb">
-                                                        <img src="/img/product/product-5.png" alt="Product" />
-                                                    </a>
-                                                    <a href="single-product" class="product-name">Metallic cotton
-                                                        dress</a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="price">$29.99</span>
-                                            </td>
-                                            <td>
-                                                <div class="pro-qty">
-                                                    <input type="text" class="quantity" title="Quantity" value="3" />
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="price">$29.99</span>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="product-list">
-                                                <div class="cart-product-item d-flex align-items-center">
-                                                    <div class="remove-icon">
-                                                        <button><i class="fa fa-trash-o"></i></button>
-                                                    </div>
-                                                    <a href="single-product" class="product-thumb">
-                                                        <img src="/img/product/product-6.png" alt="Product" />
-                                                    </a>
-                                                    <a href="single-product" class="product-name">Open-knit
-                                                        sweater</a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="price">$39.99</span>
-                                            </td>
-                                            <td>
-                                                <div class="pro-qty">
-                                                    <input type="text" class="quantity" title="Quantity" value="1" />
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="price">$39.99</span>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="product-list">
-                                                <div class="cart-product-item d-flex align-items-center">
-                                                    <div class="remove-icon">
-                                                        <button><i class="fa fa-trash-o"></i></button>
-                                                    </div>
-                                                    <a href="single-product" class="product-thumb">
-                                                        <img src="/img/product/product-7.png" alt="Product" />
-                                                    </a>
-                                                    <a href="single-product" class="product-name">Open-knit
-                                                        sweater</a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="price">$39.99</span>
-                                            </td>
-                                            <td>
-                                                <div class="pro-qty">
-                                                    <input type="text" class="quantity" title="Quantity" value="1" />
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="price">$39.99</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <div class="cart-coupon-update-area d-sm-flex justify-content-between align-items-center">
-                                <div class="coupon-form-wrap">
-                                    <form action="#" method="post">
-                                        <label for="coupon" class="sr-only">Coupon Code</label>
-                                        <input type="text" id="coupon" placeholder="Coupon Code" />
-                                        <button class="btn-apply">Apply Button</button>
-                                    </form>
-                                </div>
-
-                                <div class="cart-update-buttons mt-15 mt-sm-0">
-                                    <button class="btn-clear-cart">Clear Cart</button>
-                                    <button class="btn-update-cart">Update Cart</button>
-                                </div>
-                            </div>
-                        </div>
+    <div class="container-xxl py-6" th:if="${user != null and user.isManagerOrAdmin() != true}">
+        <div class="container">
+            <div class="row">
+                <h2 class="display-5 mb-3">My Order</h2>
+                <div class="tab-content">
+                    <div class="tab-pane active show">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Created</th>
+                                <th>Status</th>
+                                <th>Order Items</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="order : ${user.getActiveOrders()}">
+                                <td th:text="${order.id}"></td>
+                                <td th:text="${order.created}"></td>
+                                <td th:text="${order.status}"></td>
+                                <td>
+                                    <ul>
+                                        <li th:each="item : ${order.orderitems}">
+                                            <span th:text="${item.product.name}"></span> x <span
+                                                th:text="${item.count}"></span>
+                                            <span> = </span>
+                                            <span th:text="${item.product.price * item.count}">Partial cost</span>
+                                            <a class="btn btn-danger btn-sm"
+                                               th:href="@{/order/{id}/deleteOrderItem/{itemId}(id=${order.id}, itemId=${item.id})}">Delete</a>
+                                        </li>
+                                        <li>
+                                            <span colspan="3">Total cost:</span>
+                                            <span th:text="${order.getPrice()}"></span>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary"
+                                       th:href="@{/order/{id}/changeStatus?status=IN_PROGRES(id=${order.id})}">Apply
+                                        Order</a>
+                                    <a class="btn btn-danger" th:href="@{/order/{id}/delete(id=${order.id})}">Delete
+                                        Order</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                    <div class="col-lg-4">
-                        <!-- Cart Calculate Area -->
-                        <div class="cart-calculate-area mt-sm-40 mt-md-60">
-                            <h5 class="cal-title">Cart Totals</h5>
 
-                            <div class="cart-cal-table table-responsive">
-                                <table class="table table-borderless">
-                                    <tr class="cart-sub-total">
-                                        <th>Subtotal</th>
-                                        <td>$289.89</td>
-                                    </tr>
-                                    <tr class="shipping">
-                                        <th>Shipping</th>
-                                        <td>
-                                            <ul class="shipping-method">
-                                                <li>
-                                                    <div class="custom-control custom-radio">
-                                                        <input type="radio" id="flat_shipping" name="shipping_method" class="custom-control-input" checked />
-                                                        <label class="custom-control-label" for="flat_shipping">Flat Rate :
-                                                            $10</label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="custom-control custom-radio">
-                                                        <input type="radio" id="free_shipping" name="shipping_method" class="custom-control-input" />
-                                                        <label class="custom-control-label" for="free_shipping">Free
-                                                            Shipping</label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="custom-control custom-radio">
-                                                        <input type="radio" id="cod_shipping" name="shipping_method" class="custom-control-input" />
-                                                        <label class="custom-control-label" for="cod_shipping">Cash on
-                                                            Delivery</label>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr class="order-total">
-                                        <th>Total</th>
-                                        <td><b>$299.93</b></td>
-                                    </tr>
-                                </table>
-                            </div>
-
-                            <div class="proceed-checkout-btn">
-                                <a href="checkout" class="btn btn-brand d-block">Proceed to Checkout</a>
-                            </div>
+    <div class="container-xxl py-6" th:if="${#request.isUserInRole('ADMIN') or (user.isManagerOrAdmin() == true)}">
+        <div class="container">
+            <div class="row">
+                <h2 class="display-5 mb-3">All Orders</h2>
+                <div class="col-12">
+                    <ul class="nav nav-pills mb-3" id="ordersTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="created-tab" data-bs-toggle="pill" href="#CREATED" role="tab"
+                               aria-controls="created" aria-selected="true">Created</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="inProgress-tab" data-bs-toggle="pill" href="#IN_PROGRES" role="tab"
+                               aria-controls="inProgress" aria-selected="false">In Progress</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="done-tab" data-bs-toggle="pill" href="#DONE" role="tab"
+                               aria-controls="done"
+                               aria-selected="false">Done</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="closed-tab" data-bs-toggle="pill" href="#CLOSED" role="tab"
+                               aria-controls="closed" aria-selected="false">Closed</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="ordersTabContent">
+                        <div th:each="status : ${T(com.hescha.autochapterstore.model.OrderStatus).values()}"
+                             th:id="${status}"
+                             th:classappend="${status == T(com.hescha.autochapterstore.model.OrderStatus).CREATED} ? 'active '"
+                             class="tab-pane" role="tabpanel" aria-labelledby="${status}-tab">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Created</th>
+                                    <th>Status</th>
+                                    <th>Order Items</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="order : ${list}" th:if="${order.status == status}">
+                                    <td th:text="${order.id}"></td>
+                                    <td th:text="${order.created}"></td>
+                                    <td th:text="${order.status}"></td>
+                                    <td>
+                                        <ul>
+                                            <li th:each="item : ${order.orderitems}"
+                                                th:if="${order.status == T(com.hescha.autochapterstore.model.OrderStatus).CREATED}">
+                                                <span th:text="${item.product.name}"></span> x <span
+                                                    th:text="${item.count}"></span>
+                                                <span> = </span>
+                                                <span th:text="${item.product.price * item.count}">Partial cost</span>
+                                                <a class="btn btn-danger btn-sm"
+                                                   th:href="@{/order/{id}/deleteOrderItem/{itemId}(id=${order.id}, itemId=${item.id})}">Delete</a>
+                                            </li>
+                                            <li>
+                                                <span colspan="3">Total cost:</span>
+                                                <span th:text="${order.getPrice()}"></span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td class="d-flex" style="font-size: 15px">
+                                        <a class="btn btn-primary"
+                                           th:href="@{/order/{id}/changeStatus?status=CREATED(id=${order.id})}">CREATED</a>
+                                        <a class="btn btn-primary"
+                                           th:href="@{/order/{id}/changeStatus?status=IN_PROGRES(id=${order.id})}">IN_PROGRES</a>
+                                        <a class="btn btn-primary"
+                                           th:href="@{/order/{id}/changeStatus?status=DONE(id=${order.id})}">DONE</a>
+                                        <a class="btn btn-primary"
+                                           th:href="@{/order/{id}/changeStatus?status=CLOSED(id=${order.id})}">CLOSED</a>
+                                        <a th:if="${status == T(com.hescha.autochapterstore.model.OrderStatus).CREATED}"
+                                           class="btn btn-danger"
+                                           th:href="@{/order/{id}/delete(id=${order.id})}">Delete</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--== End Page Content Wrapper ==-->
 
-   <footer th:replace="~{/commons/footer :: footer}"></footer>
-
-    <!-- Scroll Top Button -->
-    <button class="btn-scroll-top"><i class="ion-chevron-up"></i></button>
-
-
+    <footer th:replace="~{/commons/footer :: footer}"></footer>
 
     <div th:replace="~{/commons/script :: script}"></div>
 
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
