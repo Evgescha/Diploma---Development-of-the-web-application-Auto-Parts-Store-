@@ -70,7 +70,6 @@ public class UserService extends CrudService<User> implements org.springframewor
     }
 
     public boolean registerNew(User entity) {
-
         Role read = roleService.read(1);
         entity.getRoles().add(read);
         log.info("registerNew {}", entity);

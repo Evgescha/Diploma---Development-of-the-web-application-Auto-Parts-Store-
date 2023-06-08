@@ -46,8 +46,8 @@ public class OrderController {
 
     @GetMapping
     public String readAll(Model model) {
-        model.addAttribute("list", orderService.readAll());
         User loggedIn = securityService.getLoggedIn();
+        model.addAttribute("list", orderService.readAll());
         model.addAttribute("user", loggedIn);
         return THYMELEAF_TEMPLATE_ALL_ITEMS_PAGE;
     }
